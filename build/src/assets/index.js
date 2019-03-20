@@ -7,11 +7,13 @@ import muteIcon from "./mute.png";
 import muteEngagedIcon from "./mute-dark.png";
 import volumeEngaged from "./volume-dark.png";
 import forwardIcon from "./forward.png";
-import forwardHoverIcon from "./forward-hover.png"
-import loopIcon from "./loop.png"
-import loopEngagedIcon from "./loop-engaged.png"
-import rewindIcon from "./rewind.png"
-import rewindHoverIcon from "./rewind-dark.png"
+import forwardHoverIcon from "./forward-hover.png";
+import loopIcon from "./loop.png";
+import loopEngagedIcon from "./loop-engaged.png";
+import rewindIcon from "./rewind.png";
+import rewindHoverIcon from "./rewind-dark.png";
+import downloadIcon from "./download-light.png";
+import downloadHoverIcon from "./download-dark.png";
 
 export default { 
   playIcon,
@@ -27,5 +29,7 @@ export default {
   rewindIcon,
   rewindHoverIcon,
   loopIcon,
-  loopEngagedIcon
+  loopEngagedIcon,
+  downloadIcon,
+  downloadHoverIcon
 };

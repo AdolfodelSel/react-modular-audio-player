@@ -22,7 +22,9 @@ export function mountComponent() {
     'fontColor',
     'sliderClass',
     'playerWidth',
-    'iconSize'
+    'iconSize',
+    'downloadIcon',
+    'downloadHoverIcon',
   ]);
   this.setState(opts, () => {
     if (!this.props.hideName) 

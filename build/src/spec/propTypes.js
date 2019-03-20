@@ -18,7 +18,8 @@ let str = PropTypes.string,
         "loop",
         "time",
         "seek",
-        "volume"
+        "volume",
+        "download"
       ]),
       style: PropTypes.object
     }))
@@ -42,7 +43,9 @@ let str = PropTypes.string,
   iconSize = str,
   sliderClass = str,
   playerWidth = str,
-  hideSeeking = bool;
+  hideSeeking = bool,
+  downloadIcon = str,
+  downloadHoverIcon = str;
 
 export const audioPlayerPropTypes = {
   audioFiles: PropTypes
@@ -62,6 +65,8 @@ export const audioPlayerPropTypes = {
   rewindHoverIcon,
   loopIcon,
   loopEngagedIcon,
+  downloadIcon,
+  downloadHoverIcon,
   iconSize,
   sliderClass,
   playerWidth,
@@ -90,7 +95,8 @@ export const customArrangePropTypes = {
     loop: requiredFunc,
     name: requiredFunc,
     time: requiredFunc,
-    volume: requiredFunc
+    volume: requiredFunc,
+    download: requiredFunc
   })
 };
 
@@ -171,3 +177,13 @@ export const volumePropTypes = {
   handleVolume: requiredFunc,
   width: str.isRequired
 };
+
+export const downloadPropTypes = {
+  iconSize,
+  handleHoverOver,
+  handleHoverOut,
+  handleDownload: requiredFunc,
+  downloadHover: bool.isRequired,
+  downloadHoverIcon,
+  downloadIcon,
+}

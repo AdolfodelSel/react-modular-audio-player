@@ -9,6 +9,7 @@ import {default as SeekBar} from './seekBar';
 import {default as Time} from './time';
 import {default as Volume} from './volume';
 import {default as CustomArrange} from './customArrange'
+import {default as Download} from './download'
 
 export function renderPlay(position) {
   return <Play
@@ -103,4 +104,15 @@ export function renderCustomArrange() {
     setStyle={this.setStyle}
     setAudio={this.setAudio}
     componentObj={this.componentObj}/>
+}
+
+export function renderDownload() {
+  return <Download
+  handleHoverOver={this.handleHoverOver}
+  handleHoverOut={this.handleHoverOut}
+  handleDownload={this.handleDownload}
+  downloadHover={this.state.downloadHover}
+  downloadIcon={this.state.downloadIcon}
+  downloadHoverIcon={this.state.downloadHoverIcon}
+  iconSize={this.state.iconSize}/>
 }

@@ -24,6 +24,8 @@ import {renderPlayIcon, renderMuteIcon, scrollMarquee} from './renderVisualEleme
 
 import {handleLoop} from './loop';
 
+import {handleDownload} from './download';
+
 export default {
   setScrollSize,
   mountComponent,
@@ -50,5 +52,6 @@ export default {
   renderPlayIcon,
   renderMuteIcon,
   scrollMarquee,
-  handleLoop
+  handleLoop,
+  handleDownload
 };

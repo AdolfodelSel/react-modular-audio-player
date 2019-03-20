@@ -15,6 +15,9 @@ export function handleHoverOver(e, type) {
     case 'loop':
       this.setState({loopHover: true});
       break;
+    case 'download':
+      this.setState({downloadHover: true});
+      break;
   }
 }
 
@@ -34,6 +37,9 @@ export function handleHoverOut(e, type) {
       break;
     case 'loop':
       this.setState({loopHover: false});
+      break;
+    case 'download':
+      this.setState({downloadHover: false});
       break;
   }
 }

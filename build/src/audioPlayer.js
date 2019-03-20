@@ -10,7 +10,8 @@ import {
   renderSeekBar,
   renderTime,
   renderVolume,
-  renderCustomArrange
+  renderCustomArrange,
+  renderDownload
 } from "./innerComponents/index";
 
 //methods
@@ -42,7 +43,8 @@ export class AudioPlayer extends Component {
       name: renderName.bind(this),
       seek: renderSeekBar.bind(this),
       time: renderTime.bind(this),
-      volume: renderVolume.bind(this)
+      volume: renderVolume.bind(this),
+      download: renderDownload.bind(this)
     };
 
     //binding methods
@@ -73,6 +75,7 @@ export class AudioPlayer extends Component {
     this.renderMuteIcon = functions.renderMuteIcon.bind(this);
     this.handleLoop = functions.handleLoop.bind(this);
     this.renderCustomArrange = renderCustomArrange.bind(this);
+    this.handleDownload = functions.handleDownload.bind(this);
   }
 
   componentDidMount() {
@@ -115,6 +118,9 @@ export class AudioPlayer extends Component {
 
           {/* Volume Controls */}
           {this.componentObj.volume()}
+
+          {/* Download */}
+          {this.componentObj.download()}
         </div>
       );
     } else {

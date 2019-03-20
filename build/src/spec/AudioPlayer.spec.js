@@ -14,6 +14,7 @@ import Name from "../innerComponents/name";
 import Time from "../innerComponents/time";
 import SeekBar from "../innerComponents/seekBar";
 import Volume from "../innerComponents/volume";
+import Download from "../innerComponents/download";
 import { mountComponent } from "../functions/setUp";
 import { handleHoverOut } from "../functions/hover";
 
@@ -49,6 +50,8 @@ describe("AudioPlayer Component", () => {
       forwardHoverIcon: "/forwardHoverIcon",
       rewindIcon: "/rewindIcon",
       rewindHoverIcon: "/rewindHoverIcon",
+      downloadIcon: "/downloadIcon",
+      downloadHoverIcon: "/downloadHoverIcon",
       loopIcon: "/loopIcon",
       loopEngagedIcon: "/loopEngagedIcon",
       fontFamily: "serif",
@@ -101,7 +104,8 @@ describe("AudioPlayer Component", () => {
         forwardIcon="/forwardIcon"
         forwardHoverIcon="/forwardHoverIcon"
         rewindIcon="/rewindIcon"
-        rewindHoverIcon="/rewindHoverIcon"/>);
+        rewindHoverIcon="/rewindHoverIcon"
+        downloadIcon="/downloadIcon"/>);
       setScrollSizeSpy = sinon.spy(audioPlayer.instance(), 'setScrollSize');
       playSpy = sinon.spy(audioPlayer.instance(), "handlePlay");
       pauseSpy = sinon.spy(audioPlayer.instance(), "handlePause");
@@ -290,6 +294,21 @@ describe("AudioPlayer Component", () => {
         mouseLeaveSrcCheck(audioPlayer, "#forward", "/forwardIcon", "/forwardHoverIcon");
       })
     })
+
+    describe("Download Functions", () => {
+      it("mouseOver #download calls handleHoverOver with 'download' as second argument and sets state.downloadHover as true", () => {
+        mouseOverCheck(audioPlayer, "downloadHover", handleHoverOverSpy, "#download")
+      })
+      it("mouseLeave #download calls handleHoverOut with 'download' as second argument and sets state.downloadHover as false", () => {
+        mouseLeaveCheck(audioPlayer, "downloadHover", handleHoverOutSpy, "#download");
+      })
+      it("mouseOver #download changes #download img src", () => {
+        mouseOverSrcCheck(audioPlayer, "#download", "/downloadIcon", "/downloadHoverIcon");
+      })
+      it("mouseLeave #download changes #download img src", () => {
+        mouseLeaveSrcCheck(audioPlayer, "#download", "/downloadIcon", "/downloadHoverIcon");
+      })
+    })
   })
 
   describe("Rearranged Player", () => {
@@ -304,7 +323,8 @@ describe("AudioPlayer Component", () => {
           { type: "play" },
           { type: "rewind" },
           { type: "forward" },
-          { type: "loop" }
+          { type: "loop" },
+          { type: "download" }
         ]
       },
       {
@@ -332,7 +352,7 @@ describe("AudioPlayer Component", () => {
       expect(audioPlayer.state()).to.deep.equal(rearrangeInitialState);
     });
     it("renders the correct subcomponents", () => {
-      checkMultipleComponents(audioPlayer, [Name, Play, Rewind, Forward,Loop, Time, SeekBar, Volume]);
+      checkMultipleComponents(audioPlayer, [Name, Play, Rewind, Forward, Loop, Time, SeekBar, Volume, Download]);
     });
   });
 });
