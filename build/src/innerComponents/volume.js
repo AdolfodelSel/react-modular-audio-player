@@ -25,9 +25,7 @@ const Volume = (props) => {
       }}>
       <div
         id="volume"
-        onClick={handleMute}
-        onMouseOver={e => handleHoverOver(e, 'mute')}
-        onMouseOut={e => handleHoverOut(e, 'mute')}>
+        onClick={handleMute}>
         <img 
           id="volume-icon"
           style={{
