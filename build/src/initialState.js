@@ -45,7 +45,7 @@ export default {
   fontWeight : "100",
   fontSize : "small",
   fontColor : "black",
-  playerWidth : "20rem",
+  playerWidth : "25rem",
   iconSize : "1rem",
   hideSeeking : false,
   scrollMarquee : false,

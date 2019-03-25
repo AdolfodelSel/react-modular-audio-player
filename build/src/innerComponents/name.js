@@ -33,7 +33,10 @@ const Name = (props) => {
           ? (`${artist} - `)
           : null
         }
-        {title}
+        {title
+          ? title
+          : "------------"
+        }
       </div>
     </div>
   )

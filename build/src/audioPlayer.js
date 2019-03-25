@@ -81,7 +81,11 @@ export class AudioPlayer extends Component {
   componentDidMount() {
     this.mountComponent();
   }
-
+  
+  componentDidUpdate(){
+    this.setScrollSize();
+  }
+  
   render() {
     let title = this.props.audioFiles[this.state.currentTrackIdx].title;
 
