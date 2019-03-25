@@ -1,14 +1,16 @@
 export function handleDownload() {
 
-  let link = document.createElement('a');
-  link.href = this.props.audioFiles[0]["src"];
-  if(!validURL(this.props.audioFiles[0]["src"])){
-    let audio = this.props.audioFiles[0]["src"].split(",")[1];
-    var blob = b64toBlob(audio, "audio/mpeg");
-    link.href = URL.createObjectURL(blob);
-  }
-  link.download = `record-${new Date().getTime()}.mp3`;
-  link.click();
+  this.props.audioFiles.forEach(function(item) {
+    let link = document.createElement('a');
+    link.href = item["src"];
+    if(!validURL(item["src"])){
+      let audio = item["src"].split(",")[1];
+      var blob = b64toBlob(audio, "audio/mpeg");
+      link.href = URL.createObjectURL(blob);
+    }
+    link.download = item["title"];
+    link.click();
+  });
 }
 
 function validURL(str) {
